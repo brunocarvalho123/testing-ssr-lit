@@ -1,22 +1,43 @@
 import {html, css, LitElement} from 'lit';
 
 
+export class MyApp extends LitElement {
+  static get styles () {
+    return css`
+      .teste { background-color: lightpink }
+    `;
+  }
+
+  render () {
+    return html`
+      <div>
+        <div class="teste">
+          <slot name="teste"></slot>
+        </div>
+        <slot name="teste2"></slot>
+        <slot name="footer"></slot>
+      </div>
+    `;
+  }
+}
+customElements.define('my-app', MyApp);
+
 export class SimpleGreeting extends LitElement {
-  static get styles() {
+  static get styles () {
     return css`p { color: blue }`;
   }
-  static get properties() {
+  static get properties () {
     return {
       name: {type: String}
     }
   }
-  constructor() {
+  constructor () {
     super();
     this.name = 'Somebody';
   }
-  render() {
+  render () {
     return html`
-    <p>Hello, ${this.name}!</p>
+    <p>Hello h, ${this.name}!</p>
     <casper-select-lit id="csl" highlight width=200>
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
@@ -34,7 +55,11 @@ export const myTemplate = () => {
     <script>var process = {env: {NODE_ENV: ''}} ;</script>
     <script type="module" src="./imports.js"></script>
 
-    <simple-greeting .name="${'pedro'}"></simple-greeting>
+    <my-app>
+      <simple-greeting .name="${'pedro'}" slot="teste"></simple-greeting>
+      <simple-greeting .name="${'teste'}" slot="teste2"></simple-greeting>
+      <ib-footer slot="footer"></ib-footer>
+    </my-app>
 
     <script type="module">
       // Hydrate template-shadowroots eagerly after rendering (for browsers without
