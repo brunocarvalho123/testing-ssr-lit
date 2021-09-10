@@ -32,7 +32,7 @@ export class IBFooter extends LitElement {
   render () {
     return html`
       <footer>
-        <img src="./images/buildings.png" width="1440">
+        <img src="../images/buildings.png" width="1440">
         <div>
           <ul>
             <li>Termos & condições</li>
