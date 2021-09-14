@@ -50,14 +50,14 @@ export class IBCard extends LitElement {
       }
 
       :host([theme="invite-accountant"]) p {
-        color: rgb(110, 120, 134);
+        color: var(--secondary-text-color);
         font-weight: 300;
         font-size: 18px;
         line-height: 26px;
       }
 
       :host([theme="invite-accountant"]) a {
-        color: rgb(97, 159, 248);
+        color: var(--links-blue-color);
         background-color: rgb(26, 40, 62, 0);
       }
     `;
