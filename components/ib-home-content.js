@@ -9,6 +9,7 @@ export class IBHomeContent extends LitElement {
 
       section {
         padding: 100px 0;
+        font-size: var(--main-section-font-size);
       }
 
       section:nth-of-type(odd) {
@@ -39,6 +40,10 @@ export class IBHomeContent extends LitElement {
         text-align: center;
       }
 
+      section#intro {
+        padding: 70px 0;
+      }
+
       section#intro .section-container {
         display: flex;
         justify-content: space-between;
@@ -47,15 +52,48 @@ export class IBHomeContent extends LitElement {
       section#intro .section-container #intro-content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        // justify-content: space-between;
         width: 40%;
       }
 
+      section#intro .section-container #intro-content > *:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
       section#intro .section-container #intro-content h1 {
-        font-size: 45px;
+        font-size: var(--h1-font-size);
         line-height: 65px;
         font-weight: 600;
         margin: 0;
+      }
+
+      section#intro .section-container #intro-content p {
+        font-size: 22px;
+        font-weight: 300;
+        margin-top: 0;
+      }
+
+      section#intro .section-container #intro-content #intro-actions-container {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+      }
+
+      section#intro .section-container #intro-content button {
+        background-color: var(--primary-accent-color);
+        color: white;
+        border: none;
+        padding: 15px 80px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 22px;
+        align-self: flex-start;
+        margin-bottom: 30px;
+      }
+
+      section#intro .section-container #intro-content a {
+        color: var(--primary-accent-color);
+        align-self: center;
       }
 
       section#invite-accountant h2 {
@@ -140,14 +178,48 @@ export class IBHomeContent extends LitElement {
           <div id="intro-content">
             <h1>O seu Negócio, o seu Banco e o seu Contabilista, num único sítio.</h1>
             <p>Tempo é dinheiro. Poupe os dois.</p>
-            <button>Saiba mais</button>
-            <a>Veja como funciona</a>
+            <div id="intro-actions-container">
+              <button>Saiba Mais</button>
+              <a>Veja como funciona</a>
+            </div>
           </div>
-          <div style="width:550px; height:400px; background-color: lightpink;"></div>
+          <div style="width:550px; height:450px; background-color: lightpink;"></div>
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <div class="section-container">
+          <h2>All-in-one. Tudo para gerir o seu Negócio</h2>
+          <p>Software de Gestão e Faturação certificado pela AT com selo SVAT conta bancária integrada e acesso ao Contabilista. Não precisa de instalar nada.</p>
+          <div style="display:flex;">
+            <ib-list-card></ib-list-card>
+            <div style="width:250px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:250px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- change bg color -->
+      <section>
+        <div class="section-container">
+          <p>Comece a usar em 5 mins</p>
+          <div style="display:flex;">
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-container">
+          <h2>A Susana já usa o Placeholder</h2>
+          <p>Faça como a Susana e encontre soluções para os problemas do seu dia-a-dia</p>
+          <div style="display:flex;">
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+          </div>
+        </div>
+      </section>
 
       <section id="invite-accountant">
         <div class="section-container">

@@ -21,7 +21,7 @@ export class MyApp extends LitElement {
         <main>
           <ib-home-content></ib-home-content>
         </main>
-        
+
         <footer>
           <ib-footer></ib-footer>
         </footer>
@@ -54,6 +54,10 @@ export const myTemplate = () => {
         /* other colors */
         --footer-copyright-text-color: rgb(132, 142, 156);
         --light-grey-text-color: rgb(187, 191, 198);
+
+        /* font sizes */
+        --main-section-font-size: 1rem;
+        --h1-font-size: 2.8em;
       }
 
       body {
