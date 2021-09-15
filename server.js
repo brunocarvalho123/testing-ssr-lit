@@ -5,7 +5,8 @@ import { Readable } from 'stream';
 const { nodeResolve } = koaNodeResolve;
 
 import { render } from '@lit-labs/ssr/lib/render-with-global-dom-shim.js';
-import { myTemplate } from './my-template.js';
+// import { myTemplate } from './my-template.js';
+import { myFullTemplate } from './full-template.js';
 
 // Basic KOA server
 const app = new Koa();
@@ -15,7 +16,7 @@ app.use(async (ctx, next) => {
     await next();
     return;
   }
-  const result = render(myTemplate());
+  const result = render(myFullTemplate());
   ctx.body = Readable.from(result);
   ctx.type = 'text/html';
 });

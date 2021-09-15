@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cloudware-casper/casper-select-lit": "^0.x",
     "@lit-labs/ssr": "^1.0.0-rc.3",
     "@webcomponents/template-shadowroot": "^0.1.0",
     "koa": "^2.13.1"
