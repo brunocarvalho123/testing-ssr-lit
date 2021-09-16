@@ -255,6 +255,24 @@ export class IBHomeContent extends LitElement {
       <h1>Ainda não tem um Contabilista?</h1>
       <p>Temos uma rede com mais de 20 mil Contabilistas certificados. Procure por localidade e conheça as vantagens de ter um Contabilista da rede Placeholder.</p>
     `;
+
+
+    this.knowMoreCardText1 = `
+      <h1>Programa de estágios para empresas</h1>
+      <p>Descubra como inscrever a sua Empresa</p>
+    `;
+    this.knowMoreCardText2 = `
+      <h1>PRR - Plano de Recuperação e Resiliência</h1>
+      <p>Saiba como inscrever-se e acompanhar os seus projetos de investimento</p>
+    `;
+    this.knowMoreCardText3 = `
+      <h1>Lay-off simplificado</h1>
+      <p>Saiba mais sobre as medidas excecionais e temporárias de resposta à epidemia COVID-19</p>
+    `;
+    this.knowMoreCardText4 = `
+      <h1>Como criar uma Empresa</h1>
+      <p>Veja agora quais são todos os passos necessários para abrir uma Empresa em Portugal</p>
+    `;
   }
 
   getHtml (event) {
@@ -365,10 +383,10 @@ export class IBHomeContent extends LitElement {
         <div class="section-container">
           <h2>Esclareça todas as suas dúvidas. Nós ajudamos!</h2>
           <div class="cards-container">
-            <ib-card header="Programa de estágios para empresas" description="Descubra como inscrever a sua Empresa"></ib-card>
-            <ib-card header="PRR - Plano de Recuperação e Resiliência" description="Saiba como inscrever-se e acompanhar os seus projetos de investimento"></ib-card>
-            <ib-card header="Lay-off simplificado" description="Saiba mais sobre as medidas excecionais e temporárias de resposta à epidemia COVID-19"></ib-card>
-            <ib-card header="Como criar uma Empresa" description="Veja agora quais são todos os passos necessários para abrir uma Empresa em Portugal"></ib-card>
+            <ib-card text=${this.knowMoreCardText1}></ib-card>
+            <ib-card text=${this.knowMoreCardText2}></ib-card>
+            <ib-card text=${this.knowMoreCardText3}></ib-card>
+            <ib-card text=${this.knowMoreCardText4}></ib-card>
           </div>
         </div>
       </section>

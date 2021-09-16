@@ -21,7 +21,8 @@ export class IBListCard extends LitElement {
         display: flex;
         flex-direction: column;
         background-color: white;
-        padding: 10px;
+        padding: 30px 10px;
+        box-shadow: 0px 5px 20px rgb(0, 0, 0, 0.1);
       }
 
       #title-container {
