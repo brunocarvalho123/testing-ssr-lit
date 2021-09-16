@@ -69,8 +69,9 @@ export const myTemplate = () => {
         margin: 0;
       }
     </style>
-    <script>var process = {env: {NODE_ENV: ''}} ;</script>
+
     <script type="module" src="./imports.js"></script>
+    <script src="./node_modules/quill/dist/quill.js"></script>
 
     <my-app></my-app>
 

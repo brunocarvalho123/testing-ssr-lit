@@ -1,8 +1,8 @@
 import {html, css, LitElement} from 'lit';
 
 export class IBCard extends LitElement {
-  static get properties () { 
-    return { 
+  static get properties () {
+    return {
       header: {
         type: String
       },
@@ -65,13 +65,23 @@ export class IBCard extends LitElement {
 
   constructor () {
     super();
-    
+
     this.link = 'Saiba mais';
+    this.quill = undefined;
+  }
+
+  moveEditor (event) {
+    if (this.quill === undefined) {
+      this.quill = new Quill(event.currentTarget, {
+        theme: 'snow'
+      });
+    }
   }
 
   render () {
     return html`
-      <div>
+      <link href="./node_modules/quill/dist/quill.snow.css" rel="stylesheet">
+      <div @click="${this.moveEditor}">
         <slot name="media"></slot>
         <h1>${this.header}</h1>
         <p>${this.description}</p>
