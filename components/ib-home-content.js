@@ -206,6 +206,22 @@ export class IBHomeContent extends LitElement {
       ib-list-card {
         max-width: 30%;
       }
+
+
+
+      button#saveQuill {
+        position: fixed;
+        bottom: 3vh;
+        right: 2.5vw;
+        font-size: 25px;
+        background-color: rgb(255,170,102);
+        border: none;
+        padding: 20px 30px;
+        border-radius: 35px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
     `;
   }
 
@@ -239,6 +255,10 @@ export class IBHomeContent extends LitElement {
       <h1>Ainda não tem um Contabilista?</h1>
       <p>Temos uma rede com mais de 20 mil Contabilistas certificados. Procure por localidade e conheça as vantagens de ter um Contabilista da rede Placeholder.</p>
     `;
+  }
+
+  getHtml (event) {
+    debugger;
   }
 
   render () {
@@ -383,6 +403,8 @@ export class IBHomeContent extends LitElement {
           </ul>
         </div>
       </section>
+
+      <button id="saveQuill" @click="${this.getHtml}">Guardar</button>
     `;
   }
 }
