@@ -226,6 +226,19 @@ export class IBHomeContent extends LitElement {
       "Agenda e alertas de eventos de pagamentos e recebimentos",
       "Apoio à tesouraria, com pedido de financiamento integrado (exclusivo Clientes Placeholder)"
     ]
+
+    this.inviteAccountantCardText1 = `
+      <h1>Chega de papel!</h1>
+      <p>Com a Placeholder é mais fácil digitalizar as suas despesas e dar acesso ao seu Contabilista. O envio de papel virou coisa do passado!</p>
+    `;
+    this.inviteAccountantCardText2 = `
+      <h1>Articulação digital com o seu Contabilista</h1>
+      <p>Na Placeholder, o seu Contabilista consegue aceder a todos os seus documentos e movimentos, já linkados com as faturas digitalizadas.</p>
+    `;
+    this.inviteAccountantCardText3 = `
+      <h1>Ainda não tem um Contabilista?</h1>
+      <p>Temos uma rede com mais de 20 mil Contabilistas certificados. Procure por localidade e conheça as vantagens de ter um Contabilista da rede Placeholder.</p>
+    `;
   }
 
   render () {
@@ -295,13 +308,13 @@ export class IBHomeContent extends LitElement {
           <h2>Convide o seu Contabilista</h2>
           <p class="biggest-text">Ao trabalhar juntamente com o seu Contabilista através da Placeholder, ambos ganham muito mais tempo!</p>
           <div style="display: flex;">
-            <ib-card header="Chega de papel!" description="Com a Placeholder é mais fácil digitalizar as suas despesas e dar acesso ao seu Contabilista. O envio de papel virou coisa do passado!" link="Saiba como" theme="invite-accountant">
+            <ib-card text=${this.inviteAccountantCardText1} link="Saiba como" theme="invite-accountant">
               <img src="./images/ia-1.png" slot="media" width="180">
             </ib-card>
-            <ib-card header="Articulação digital com o seu Contabilista" description="Na Placeholder, o seu Contabilista consegue aceder a todos os seus documentos e movimentos, já linkados com as faturas digitalizadas." link="Saiba como" theme="invite-accountant">
+            <ib-card text=${this.inviteAccountantCardText2} link="Saiba como" theme="invite-accountant">
               <img src="./images/ia-2.png" slot="media" width="180">
             </ib-card>
-            <ib-card header="Ainda não tem um Contabilista?" description="Temos uma rede com mais de 20 mil Contabilistas certificados. Procure por localidade e conheça as vantagens de ter um Contabilista da rede Placeholder." link="Encontre um Contabilista" theme="invite-accountant">
+            <ib-card text=${this.inviteAccountantCardText3} link="Encontre um Contabilista" theme="invite-accountant">
               <img src="./images/ia-3.png" slot="media" width="180">
             </ib-card>
           </div>

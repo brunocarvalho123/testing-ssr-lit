@@ -1,4 +1,5 @@
 import {html, css, LitElement} from 'lit';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 export class IBCard extends LitElement {
   static get properties () {
@@ -10,6 +11,9 @@ export class IBCard extends LitElement {
         type: String
       },
       link: {
+        type: String
+      },
+      text: {
         type: String
       }
     };
@@ -75,16 +79,24 @@ export class IBCard extends LitElement {
       this.quill = new Quill(event.currentTarget, {
         theme: 'snow'
       });
+
+      this.quill.on('editor-change', this.func.bind(this));
     }
   }
 
+  func (a, b, c) {
+    debugger;
+
+    // this.quill.root.innerHTML;
+  }
+
   render () {
+
     return html`
       <link href="./node_modules/quill/dist/quill.snow.css" rel="stylesheet">
-      <div @click="${this.moveEditor}">
-        <slot name="media"></slot>
-        <h1>${this.header}</h1>
-        <p>${this.description}</p>
+      <slot name="media"></slot>
+      <div id="text-container" @click="${this.moveEditor}">
+        ${unsafeHTML(this.text)}
       </div>
       <a>${this.link}</a>
     `;
