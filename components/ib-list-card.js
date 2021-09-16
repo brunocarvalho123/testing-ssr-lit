@@ -1,12 +1,27 @@
 import {html, css, LitElement} from 'lit';
 
 export class IBListCard extends LitElement {
+  static get properties () { 
+    return { 
+      header1: {
+        type: String
+      },
+      header2: {
+        type: String
+      },
+      list: {
+        type: Array
+      }
+    };
+  }
+
   static get styles () {
     return css`
       :host {
         display: flex;
         flex-direction: column;
         background-color: white;
+        padding: 10px;
       }
 
       #title-container {
@@ -14,6 +29,7 @@ export class IBListCard extends LitElement {
         align-self: center;
         align-items: center;
         font-weight: 600;
+        font-size: var(--bigger-p-font-size);
       }
 
       #title-container > span:first-of-type {
@@ -23,23 +39,30 @@ export class IBListCard extends LitElement {
       #title-container > span:last-of-type {
         color: var(--primary-accent-color);
       }
+
+      ul li:not(ul li:last-of-type) {
+        margin-bottom: 30px;
+      }
     `;
   }
 
   render () {
     return html`
-    <div id="title-container">
-      <div style="width:50px; height:50px; background-color: lightpink;"></div>
-      <span>Venda</span>
-      &nbsp;&&nbsp;
-      <span>Receba</span>
-    </div>
-    <ul>
-      <li>Emissão de faturas e identificação automática de recebimentos</li>
-      <li>Integrado com serviços de apoio aos recebimentos: TPA, Moove, Débitos</li>
-    </ul>
+      <div id="title-container">
+        <div style="width:50px; height:50px; background-color: lightpink; margin-right: 20px;"></div>
+        <span>${this.header1}</span>
+        &nbsp;&&nbsp;
+        <span>${this.header2}</span>
+      </div>
+      
+      <ul>
+        ${this.list.map((listItem) => {        
+          return html`<li>${listItem}</li>`}
+        )}
+      </ul>
     `;
   }
 }
 
 customElements.define('ib-list-card', IBListCard);
+

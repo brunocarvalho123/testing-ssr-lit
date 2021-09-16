@@ -58,6 +58,11 @@ export const myTemplate = () => {
         /* font sizes */
         --main-section-font-size: 1rem;
         --h1-font-size: 2.8em;
+        --h2-font-size: 2.1em;
+        --bigger-p-font-size: 1.4em;
+        --smaller-p-font-size: 1.1em;
+
+        font-size: 100%;
       }
 
       body {

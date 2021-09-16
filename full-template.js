@@ -237,7 +237,8 @@ class IBHomeContent extends LitElement {
       }
 
       section {
-        padding: 100px 0;
+        padding: 15vh 0;
+        font-size: var(--main-section-font-size);
       }
 
       section:nth-of-type(odd) {
@@ -255,46 +256,95 @@ class IBHomeContent extends LitElement {
       section .section-container {
         width: 80%;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+
+
+
+
+
+      section .section-container h1,
+      section .section-container h2,
+      section .section-container p {
+        margin: 0;
       }
 
       section .section-container > h2 {
-        font-size: 34px;
-        text-align: center;
-        margin: 0 0 60px 0;
+        font-size: var(--h2-font-size);
+        margin-bottom: 3vh;
       }
 
-      section .section-container > h3,
-      main section .section-container > p {
-        text-align: center;
+      section .section-container p.biggest-text {
+        font-size: var(--bigger-p-font-size);
+        font-weight: 300;
+      }
+
+      section .section-container > p.biggest-text:not(section#faq .section-container > p.biggest-text) {
+        margin-bottom: 10vh;
+      }
+
+
+
+
+      section#intro {
+        padding: 8vh 0;
       }
 
       section#intro .section-container {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
       }
 
       section#intro .section-container #intro-content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         width: 40%;
       }
 
-      section#intro .section-container #intro-content h1 {
-        font-size: 45px;
-        line-height: 65px;
-        font-weight: 600;
-        margin: 0;
+      section#intro .section-container #intro-content > *:not(:last-child) {
+        margin-bottom: 3.8vh;
       }
 
-      section#invite-accountant h2 {
-        margin: 0 0 25px 0;
+      section#intro .section-container #intro-content h1 {
+        font-size: var(--h1-font-size);
+        line-height: 1.5em;
+        font-weight: 600;
       }
+
+      section#intro .section-container #intro-content #intro-content-actions {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+      }
+
+      section#intro .section-container #intro-content #intro-content-actions button {
+        background-color: var(--primary-accent-color);
+        color: white;
+        border: none;
+        padding: 15px 80px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: var(--bigger-p-font-size);
+        align-self: flex-start;
+        margin-bottom: 30px;
+      }
+
+      section#intro .section-container #intro-content #intro-content-actions a {
+        color: var(--primary-accent-color);
+        align-self: center;
+      }
+
+
+
+
+
 
       section#invite-accountant p {
         color: var(--secondary-text-color);
-        font-size: 20px;
-        font-weight: 300;
+        font-size: var(--bigger-p-font-size);
       }
 
       section#invite-accountant button {
@@ -307,15 +357,21 @@ class IBHomeContent extends LitElement {
         font-size: 18px;
       }
 
+
+
+
+
+
       section#know-more .cards-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       section#know-more ib-card {
         color: white;
+        max-width: 40%;
+        margin: 1.8vh 1vw;
       }
 
       section#know-more ib-card:first-of-type {
@@ -334,20 +390,34 @@ class IBHomeContent extends LitElement {
         background-color: var(--primary-text-color);
       }
 
-      section#faq > div {
+
+
+
+
+
+      section#faq .section-container {
         width: 55%;
       }
 
-      section#faq p {
-        text-align: left;
+      section#faq .section-container p.biggest-text {
         border-bottom: solid 1px rgb(205, 208, 212);
-        padding-bottom: 20px;
+        padding: 20px 0;
+        align-self: stretch;
+      }
+
+
+
+
+
+
+      section#more-info .section-container {
+        flex-direction: row;
       }
 
       section#more-info ul {
         list-style-type: none;
         padding: 0;
-        margin-left: 100px;
+        margin-left: 7vw;
       }
 
       section#more-info ul li:first-of-type {
@@ -359,7 +429,32 @@ class IBHomeContent extends LitElement {
       section#more-info ul li {
         margin-bottom: 20px;
       } 
+
+
+
+      ib-list-card {
+        max-width: 30%;
+      }
     `;
+  }
+
+  constructor () {
+    super();
+    this.list1 = [
+      "Emissão de faturas e identificação automática de recebimentos", 
+      "Integrado com serviços de apoio aos recebimentos: TPA, Moove, Débitos"
+    ];
+    this.list2 = [
+      "Pagamento a fornecedores simplificado e integrado nas faturas", 
+      "Processamento e pagamento de Salários, Impostos e Segurança Social",
+      "Compras com ligação ao eFatura",
+      "Partilha digital das despesas com o seu Contabilista"
+    ];
+    this.list3 = [
+      "Evolução dos rendimentos, gastos e saldos bancários (open banking)", 
+      "Agenda e alertas de eventos de pagamentos e recebimentos",
+      "Apoio à tesouraria, com pedido de financiamento integrado (exclusivo Clientes Placeholder)"
+    ]
   }
 
   render () {
@@ -368,20 +463,66 @@ class IBHomeContent extends LitElement {
         <div class="section-container">
           <div id="intro-content">
             <h1>O seu Negócio, o seu Banco e o seu Contabilista, num único sítio.</h1>
-            <p>Tempo é dinheiro. Poupe os dois.</p>
-            <button>Saiba mais</button>
-            <a>Veja como funciona</a>
+            <p class="biggest-text">Tempo é dinheiro. Poupe os dois.</p>
+            <div id="intro-content-actions">
+              <button>Saiba Mais</button>
+              <a>Veja como funciona</a>
+            </div>
           </div>
-          <div style="width:550px; height:400px; background-color: lightpink;"></div>
+          <div style="width:550px; height:450px; background-color: lightpink;"></div>
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <div class="section-container">
+          <h2>All-in-one. Tudo para gerir o seu Negócio</h2>
+          <p class="biggest-text">Software de Gestão e Faturação certificado pela AT com selo SVAT conta bancária integrada e acesso ao Contabilista. Não precisa de instalar nada.</p>
+          <div style="display:flex; justify-content: space-between;">
+            <ib-list-card 
+              header1="Venda" 
+              header2="Receba" 
+              .list=${this.list1}>
+            </ib-list-card>
+            <ib-list-card 
+              header1="Compre" 
+              header2="Pague"
+              .list=${this.list2}>
+            </ib-list-card>
+            <ib-list-card 
+              header1="Analise" 
+              header2="Controle" 
+              .list=${this.list3}>
+            </ib-list-card>
+          </div>
+        </div>
+      </section>
+
+      <!-- change bg color -->
+      <section>
+        <div class="section-container">
+          <p>Comece a usar em 5 mins</p>
+          <div style="display:flex;">
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-container">
+          <h2>A Susana já usa o Placeholder</h2>
+          <p class="biggest-text">Faça como a Susana e encontre soluções para os problemas do seu dia-a-dia</p>
+          <div style="display:flex;">
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+          </div>
+        </div>
+      </section>
 
       <section id="invite-accountant">
         <div class="section-container">
           <h2>Convide o seu Contabilista</h2>
-          <p>Ao trabalhar juntamente com o seu Contabilista através da Placeholder, ambos ganham muito mais tempo!</p>
+          <p class="biggest-text">Ao trabalhar juntamente com o seu Contabilista através da Placeholder, ambos ganham muito mais tempo!</p>
           <div style="display: flex;">
             <ib-card header="Chega de papel!" description="Com a Placeholder é mais fácil digitalizar as suas despesas e dar acesso ao seu Contabilista. O envio de papel virou coisa do passado!" link="Saiba como" theme="invite-accountant">
               <img src="./images/ia-1.png" slot="media" width="180">
@@ -393,7 +534,7 @@ class IBHomeContent extends LitElement {
               <img src="./images/ia-3.png" slot="media" width="180">
             </ib-card>
           </div>
-          <p>Conheça todas as vantagens que a Placeholder traz para os Contabilistas</p>
+          <p class="biggest-text">Conheça todas as vantagens que a Placeholder traz para os Contabilistas</p>
           <button>Sou Contabilista</button>
         </div>
       </section>
@@ -409,7 +550,7 @@ class IBHomeContent extends LitElement {
             </div>
             <div style="width:50px; height:50px; background-color: pink;"></div>
           </div>
-          <h3>Não perca nenhuma atualização</h3>
+          <p class="biggest-text">Não perca nenhuma atualização</p>
           <div style="padding:10px; background-color: pink;">Quero receber newsletter</div>
         </div>
       </section>
@@ -429,9 +570,9 @@ class IBHomeContent extends LitElement {
       <section id="faq">
         <div class="section-container">
           <h2>FAQ</h2>
-          <p>A Placeholder é um Banco?</p>
-          <p>Eu só quero um sistema de faturação, esta solução é para mim?</p>
-          <p>Empresas maiores também aproveitam as vantagens da Placeholder?</p>
+          <p class="biggest-text">A Placeholder é um Banco?</p>
+          <p class="biggest-text">Eu só quero um sistema de faturação, esta solução é para mim?</p>
+          <p class="biggest-text">Empresas maiores também aproveitam as vantagens da Placeholder?</p>
         </div>
       </section>
 
@@ -463,6 +604,74 @@ class IBHomeContent extends LitElement {
 }
 
 customElements.define('ib-home-content', IBHomeContent);
+
+
+class IBListCard extends LitElement {
+  static get properties () { 
+    return { 
+      header1: {
+        type: String
+      },
+      header2: {
+        type: String
+      },
+      list: {
+        type: Array
+      }
+    };
+  }
+
+  static get styles () {
+    return css`
+      :host {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px;
+      }
+
+      #title-container {
+        display: flex;
+        align-self: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: var(--bigger-p-font-size);
+      }
+
+      #title-container > span:first-of-type {
+        color: var(--secondary-accent-color);
+      }
+
+      #title-container > span:last-of-type {
+        color: var(--primary-accent-color);
+      }
+
+      ul li:not(ul li:last-of-type) {
+        margin-bottom: 30px;
+      }
+    `;
+  }
+
+  render () {
+    return html`
+      <div id="title-container">
+        <div style="width:50px; height:50px; background-color: lightpink; margin-right: 20px;"></div>
+        <span>${this.header1}</span>
+        &nbsp;&&nbsp;
+        <span>${this.header2}</span>
+      </div>
+      
+      <ul>
+        ${this.list.map((listItem) => {        
+          return html`<li>${listItem}</li>`}
+        )}
+      </ul>
+    `;
+  }
+}
+
+customElements.define('ib-list-card', IBListCard);
+
 
 
 
@@ -519,6 +728,15 @@ export const myFullTemplate = () => {
         /* other colors */
         --footer-copyright-text-color: rgb(132, 142, 156);
         --light-grey-text-color: rgb(187, 191, 198);
+
+        /* font sizes */
+        --main-section-font-size: 1rem;
+        --h1-font-size: 2.8em;
+        --h2-font-size: 2.1em;
+        --bigger-p-font-size: 1.4em;
+        --smaller-p-font-size: 1.1em;
+
+        font-size: 100%;
       }
 
       body {
@@ -526,11 +744,10 @@ export const myFullTemplate = () => {
       }
     </style>
     <script>var process = {env: {NODE_ENV: ''}} ;</script>
-    <script src="./imports.js"></script>
 
     <my-app></my-app>
 
-    <script>
+    <script type="module">
       // Hydrate template-shadowroots eagerly after rendering (for browsers without
       // native declarative shadow roots)
       import { hydrateShadowRoots } from './node_modules/@webcomponents/template-shadowroot/template-shadowroot.js';
