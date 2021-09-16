@@ -79,19 +79,10 @@ export class IBCard extends LitElement {
       this.quill = new Quill(event.currentTarget, {
         theme: 'snow'
       });
-
-      this.quill.on('editor-change', this.func.bind(this));
     }
   }
 
-  func (a, b, c) {
-    debugger;
-
-    // this.quill.root.innerHTML;
-  }
-
   render () {
-
     return html`
       <link href="./node_modules/quill/dist/quill.snow.css" rel="stylesheet">
       <slot name="media"></slot>

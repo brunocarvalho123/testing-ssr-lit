@@ -258,7 +258,9 @@ export class IBHomeContent extends LitElement {
   }
 
   getHtml (event) {
-    debugger;
+    // debugger;
+
+    console.log(this.shadowRoot.querySelector('section#invite-accountant').children[0].children[2].children[0].quill.root.innerHTML);
   }
 
   render () {
