@@ -120,7 +120,7 @@ export class IBHomeContent extends LitElement {
 
       section#susana #susana-info ib-card {
         background-color: white;
-        height: 441px;
+        height: 55vh;
         align-self: flex-end;
         position: absolute;
         left: 48.5%;
@@ -395,7 +395,7 @@ export class IBHomeContent extends LitElement {
           <h2>A Susana já usa o Placeholder</h2>
           <p class="biggest-text">Faça como a Susana e encontre soluções para os problemas do seu dia-a-dia</p>
           <div id="susana-info">
-            <img src="./images/susana.png" height="530">
+            <img src="./images/susana.png" style="height: 67vh;">
             <ib-card text=${this.susanaCardText} link="Veja como ajudamos na sua tesouraria" theme="susana"></ib-card>
           </div>
           <div id="susana-arrows">
