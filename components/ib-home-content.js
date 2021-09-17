@@ -111,6 +111,45 @@ export class IBHomeContent extends LitElement {
 
 
 
+      section#susana #susana-info {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 80vh;
+      }
+
+      section#susana #susana-info ib-card {
+        background-color: white;
+        height: 441px;
+        align-self: flex-end;
+        position: absolute;
+        left: 48.5%;
+        box-sizing: border-box;
+        padding: 60px 40px;
+        box-shadow: 0px 5px 20px rgb(0, 0, 0, 0.1);
+      }
+
+      section#susana #susana-arrows {
+        display: flex;
+        align-self: flex-end;
+        margin-top: 40px;
+      }
+
+      section#susana #susana-arrows > div:first-of-type {
+        margin-right: 20px;
+        opacity: 40%;
+      }
+
+      section#susana #susana-arrows > div {
+        width: 70px;
+        height: 50px;
+        background-color: var(--primary-accent-color);
+        border-radius: 5px;
+      }
+
+
+
+
 
 
       section#invite-accountant p {
@@ -126,6 +165,14 @@ export class IBHomeContent extends LitElement {
         border-radius: 30px;
         font-weight: 700;
         font-size: 18px;
+      }
+
+
+
+
+      section#news ib-card {
+        width: 22%;
+        background-color: white;
       }
 
 
@@ -243,6 +290,12 @@ export class IBHomeContent extends LitElement {
       "Apoio à tesouraria, com pedido de financiamento integrado (exclusivo Clientes Placeholder)"
     ]
 
+    this.susanaCardText = `
+      <h2><span>"</span>Quanto tenho de pagar de IVA?</h2>
+      <p><b>Susana Almeida</b><br>Empresária da Feliz é Quem Diz<br>@felizquemdiz</p>
+      <p>Costumava passar tanto tempo a descobrir o que estava naquela pilha de papel na minha secretária. Já não!</p>
+    `;
+
     this.inviteAccountantCardText1 = `
       <h1>Chega de papel!</h1>
       <p>Com a Placeholder é mais fácil digitalizar as suas despesas e dar acesso ao seu Contabilista. O envio de papel virou coisa do passado!</p>
@@ -272,6 +325,11 @@ export class IBHomeContent extends LitElement {
     this.knowMoreCardText4 = `
       <h1>Como criar uma Empresa</h1>
       <p>Veja agora quais são todos os passos necessários para abrir uma Empresa em Portugal</p>
+    `;
+
+    this.newsCardText1 = `
+      <h3>A partir de Janeiro de 2022 as faturas virão com QR code. E esta é uma ótima notícia.</h3>
+      <p>Público</p>
     `;
   }
 
@@ -332,13 +390,17 @@ export class IBHomeContent extends LitElement {
         </div>
       </section>
 
-      <section>
+      <section id="susana">
         <div class="section-container">
           <h2>A Susana já usa o Placeholder</h2>
           <p class="biggest-text">Faça como a Susana e encontre soluções para os problemas do seu dia-a-dia</p>
-          <div style="display:flex;">
-            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
-            <div style="width:600px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+          <div id="susana-info">
+            <img src="./images/susana.png" height="530">
+            <ib-card text=${this.susanaCardText} link="Veja como ajudamos na sua tesouraria" theme="susana"></ib-card>
+          </div>
+          <div id="susana-arrows">
+            <div></div>
+            <div></div>
           </div>
         </div>
       </section>
@@ -367,8 +429,9 @@ export class IBHomeContent extends LitElement {
         <div class="section-container">
           <h2>Fique a par de todas as novidades importantes para o seu Negócio</h2>
           <div>
-            <div>
-              <div style="width:100px; height:100px; background-color: lightpink;"></div>
+            <div style="display: flex;">
+              <ib-card text=${this.newsCardText1} link="Ler mais" theme="susana"></ib-card>
+              <!-- <div style="width:100px; height:100px; background-color: lightpink;"></div> -->
               <div style="width:100px; height:100px; background-color: lightpink;"></div>
               <div style="width:100px; height:100px; background-color: lightpink;"></div>
             </div>
@@ -383,10 +446,10 @@ export class IBHomeContent extends LitElement {
         <div class="section-container">
           <h2>Esclareça todas as suas dúvidas. Nós ajudamos!</h2>
           <div class="cards-container">
-            <ib-card text=${this.knowMoreCardText1}></ib-card>
-            <ib-card text=${this.knowMoreCardText2}></ib-card>
-            <ib-card text=${this.knowMoreCardText3}></ib-card>
-            <ib-card text=${this.knowMoreCardText4}></ib-card>
+            <ib-card text=${this.knowMoreCardText1} theme="know-more"></ib-card>
+            <ib-card text=${this.knowMoreCardText2} theme="know-more"></ib-card>
+            <ib-card text=${this.knowMoreCardText3} theme="know-more"></ib-card>
+            <ib-card text=${this.knowMoreCardText4} theme="know-more"></ib-card>
           </div>
         </div>
       </section>

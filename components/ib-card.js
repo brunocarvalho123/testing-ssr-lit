@@ -22,14 +22,13 @@ export class IBCard extends LitElement {
   static get styles () {
     return css`
       :host {
-        border-radius: 10px;
         padding: 35px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
       }
 
-      div {
+      #text-container {
         margin-bottom: 60px;
       }
 
@@ -37,16 +36,20 @@ export class IBCard extends LitElement {
         margin: 0 0 20px 0;
       }
 
-      a {
+      a::after {
+        content: "→";
+        padding-left: 5px;
+      }
+
+      :host([theme="know-more"]) {
+        border-radius: 10px;
+      }
+
+      :host([theme="know-more"]) a {
         background-color: rgb(26, 40, 62, .25);
         padding: 10px;
         border-radius: 5px;
         width: fit-content;
-      }
-
-      a::after {
-        content: "→";
-        padding-left: 5px;
       }
 
       :host([theme="invite-accountant"]) h1 {
@@ -62,7 +65,30 @@ export class IBCard extends LitElement {
 
       :host([theme="invite-accountant"]) a {
         color: var(--links-blue-color);
-        background-color: rgb(26, 40, 62, 0);
+      }
+
+      :host([theme="susana"]) {
+        border-radius: 5px;
+      }
+
+      :host([theme="susana"]) #text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 0;
+        height: 75%;
+      }
+
+      :host([theme="susana"]) #text-container * {
+        margin: 0;
+      }
+
+      :host([theme="susana"]) #text-container p:last-of-type {
+        font-size: var(--bigger-p-font-size);
+      }
+
+      :host([theme="susana"]) a {
+        color: var(--primary-accent-color);
       }
     `;
   }
