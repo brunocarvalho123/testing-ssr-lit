@@ -441,7 +441,7 @@ export class IBHomeContent extends LitElement {
       <section id="news">
         <div class="section-container">
           <h2>Fique a par de todas as novidades importantes para o seu Negócio</h2>
-          <div style="display: flex; align-self: flex-start; width: 113%; justify-content: space-between; margin-bottom: 100px;">
+          <div style="display: flex; align-self: flex-start; width: 112%; justify-content: space-between; margin-bottom: 100px;">
             <ib-card text=${this.newsCardText1} link="Ler mais" theme="susana">
               <img src="./images/news-1.png" height="215" slot="media">
             </ib-card>
