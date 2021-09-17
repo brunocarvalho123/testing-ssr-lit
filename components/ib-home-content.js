@@ -171,8 +171,13 @@ export class IBHomeContent extends LitElement {
 
 
       section#news ib-card {
-        width: 22%;
         background-color: white;
+        width: 22.5%;
+      }
+
+      section#news ib-card:nth-of-type(2) {
+        width: 35%;
+        box-shadow: 0px 5px 20px rgb(0, 0, 0, 0.1);
       }
 
 
@@ -331,6 +336,14 @@ export class IBHomeContent extends LitElement {
       <h3>A partir de Janeiro de 2022 as faturas virão com QR code. E esta é uma ótima notícia.</h3>
       <p>Público</p>
     `;
+
+    this.newsCardText2 = `
+      <h3>Como registar uma compra: Controle os seus gastos</h3>
+    `;
+
+    this.newsCardText3 = `
+      <h3>Como emitir uma fatura: saiba como vender sem complicações</h3>
+    `;
   }
 
   getHtml (event) {
@@ -428,14 +441,16 @@ export class IBHomeContent extends LitElement {
       <section id="news">
         <div class="section-container">
           <h2>Fique a par de todas as novidades importantes para o seu Negócio</h2>
-          <div>
-            <div style="display: flex;">
-              <ib-card text=${this.newsCardText1} link="Ler mais" theme="susana"></ib-card>
-              <!-- <div style="width:100px; height:100px; background-color: lightpink;"></div> -->
-              <div style="width:100px; height:100px; background-color: lightpink;"></div>
-              <div style="width:100px; height:100px; background-color: lightpink;"></div>
-            </div>
-            <div style="width:50px; height:50px; background-color: pink;"></div>
+          <div style="display: flex; align-self: flex-start; width: 113%; justify-content: space-between; margin-bottom: 100px;">
+            <ib-card text=${this.newsCardText1} link="Ler mais" theme="susana">
+              <img src="./images/news-1.png" height="215" slot="media">
+            </ib-card>
+            <ib-card text=${this.newsCardText2} link="Ver vídeo" theme="susana">
+              <img src="./images/news-2.png" height="300" slot="media">
+            </ib-card>
+            <ib-card text=${this.newsCardText3} theme="susana">
+              <img src="./images/news-3.png" height="215" slot="media">
+            </ib-card>
           </div>
           <p class="biggest-text">Não perca nenhuma atualização</p>
           <div style="padding:10px; background-color: pink;">Quero receber newsletter</div>
@@ -464,7 +479,7 @@ export class IBHomeContent extends LitElement {
       </section>
 
       <section id="more-info">
-        <div style="display: flex;" class="section-container">
+        <div class="section-container">
           <div style="width:100px; height:100px; background-color: lightpink;"></div>
           <ul>
             <li>A Placeholder</li>
