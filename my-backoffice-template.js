@@ -5,6 +5,33 @@ export const myBackofficeTemplate = () => {
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
 
+      :root {
+        /* background colors */
+        --blue-tone-background-color: rgb(242, 244, 248);
+        --grey-tone-background-color: rgb(250, 250, 250);
+        --footer-background-color: rgb(238, 243, 249);
+
+        /* text colors */
+        --primary-text-color: rgb(26, 40, 62); /* blue */
+        --secondary-text-color: rgb(112, 122, 136); /* grey */
+
+        /* accent / links colors */
+        --primary-accent-color: rgb(192, 41, 93); /* pink */
+        --secondary-accent-color: rgb(104, 146, 200); /* blue */
+        --links-blue-color: rgb(90, 155, 248);
+
+        /* other colors */
+        --footer-copyright-text-color: rgb(132, 142, 156);
+        --light-grey-text-color: rgb(187, 191, 198);
+
+        /* font sizes */
+        --main-section-font-size: 1rem;
+        --h1-font-size: 2.8em;
+        --h2-font-size: 2.1em;
+        --bigger-p-font-size: 1.4em;
+        --smaller-p-font-size: 1.1em;
+      }
+
       body {
         margin: 0;
         font-family: 'Montserrat', sans-serif;
@@ -23,9 +50,17 @@ export const myBackofficeTemplate = () => {
 
       #site-container {
         height: 81.41vh;
-        overflow-y: scroll;
-        align-self: center;
         box-shadow: 0px 0px 25px rgb(0, 0, 0, 0.2);
+        width: 100%;
+        position: relative;
+      }
+
+      #site-container > div {
+        overflow-y: scroll;
+        position: absolute;
+        transform-origin: top left;
+        transform: scale(0.76);
+        height: 124%;
       }
     </style>
 
@@ -35,7 +70,9 @@ export const myBackofficeTemplate = () => {
     <div id="grid-container">
       <bo-sites-list></bo-sites-list>
       <div id="site-container">
-        <my-app></my-app>
+        <div>
+          <my-app></my-app>
+        </div>
       </div>
     </div>
 
