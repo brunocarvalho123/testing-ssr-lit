@@ -45,12 +45,12 @@ export const myBackofficeTemplate = () => {
         height: 100vh;
       }
 
-      #grid-container bo-sites-list {
+      #grid-container bo-actions-list {
         background-color: white;
         padding: 12%;
       }
 
-      #grid-container #site-container {
+      #grid-container #right-container {
         height: 76.52%;
         box-shadow: 0px 0px 25px rgb(0, 0, 0, 0.2);
         width: 94%;
@@ -58,9 +58,10 @@ export const myBackofficeTemplate = () => {
         position: relative;
         overflow-y: scroll;
         justify-self: center;
+        display: flex;
       }
 
-      #grid-container #site-container #scalable-container {
+      #grid-container #right-container #scalable-container {
         position: absolute;
         transform-origin: top left;
         transform: scale(0.793);
@@ -71,8 +72,9 @@ export const myBackofficeTemplate = () => {
     <script src="./node_modules/quill/dist/quill.js"></script>
 
     <div id="grid-container">
-      <bo-sites-list></bo-sites-list>
-      <div id="site-container">
+      <bo-actions-list></bo-actions-list>
+      <div id="right-container">
+        <bo-sites-display></bo-sites-display>
         <div id="scalable-container">
           <!-- <my-app></my-app> -->
         </div>
