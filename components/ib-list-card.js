@@ -50,7 +50,7 @@ export class IBListCard extends LitElement {
   render () {
     return html`
       <div id="title-container">
-        <div style="width:50px; height:50px; background-color: lightpink; margin-right: 20px;"></div>
+        <div style="width:50px; height:50px; background-color: white; margin-right: 20px;"></div>
         <span>${this.header1}</span>
         &nbsp;&&nbsp;
         <span>${this.header2}</span>

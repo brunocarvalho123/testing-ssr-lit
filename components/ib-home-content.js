@@ -235,12 +235,13 @@ export class IBHomeContent extends LitElement {
 
       section#more-info .section-container {
         flex-direction: row;
+        align-items: flex-start;
       }
 
       section#more-info ul {
         list-style-type: none;
         padding: 0;
-        margin-left: 7vw;
+        margin: 0 0 0 7vw;
       }
 
       section#more-info ul li:first-of-type {
@@ -397,8 +398,8 @@ export class IBHomeContent extends LitElement {
         <div class="section-container">
           <p>Comece a usar em 5 mins</p>
           <div style="display:flex;">
-            <div style="width:400px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
-            <div style="width:400px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:400px; height:400px; background-color: rgb(242, 244, 248); margin: 0 20px;"></div>
+            <div style="width:400px; height:400px; background-color: rgb(242, 244, 248); margin: 0 20px;"></div>
           </div>
         </div>
       </section>
@@ -453,7 +454,7 @@ export class IBHomeContent extends LitElement {
             </ib-card>
           </div>
           <p class="biggest-text">Não perca nenhuma atualização</p>
-          <div style="padding:10px; background-color: pink;">Quero receber newsletter</div>
+          <div style="padding:10px; background-color: rgb(242, 244, 248);">Quero receber newsletter</div>
         </div>
       </section>
 
@@ -480,7 +481,7 @@ export class IBHomeContent extends LitElement {
 
       <section id="more-info">
         <div class="section-container">
-          <div style="width:100px; height:100px; background-color: lightpink;"></div>
+          <div style="width:100px; height:100px; background-color: white;"></div>
           <ul>
             <li>A Placeholder</li>
             <li>Sobre nós</li>

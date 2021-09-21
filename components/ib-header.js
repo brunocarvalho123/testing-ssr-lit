@@ -77,7 +77,7 @@ export class IBHeader extends LitElement {
       </div>
       <div id="header-level2">
         <div class="nav-container">
-          <div style="width:50px; height:50px; background-color: pink;"></div>
+          <div style="width:50px; height:50px; background-color: rgb(242, 244, 248);"></div>
           <nav>
             <a>Sobre Nós</a>
             <a>Funcionalidades</a>
