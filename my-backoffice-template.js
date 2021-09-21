@@ -1,4 +1,4 @@
-import {html, css, LitElement} from 'lit';
+import {html} from 'lit';
 
 export const myBackofficeTemplate = () => {
   return html`
@@ -40,27 +40,30 @@ export const myBackofficeTemplate = () => {
 
       #grid-container {
         display: grid;
-        grid-template-columns: 1fr 3fr;
-        grid-column-gap: 1vw;
+        grid-template-columns: 1fr 4fr;
         background-color: rgb(242, 242, 242);
-        padding: 1.5%;
         height: 100vh;
-        box-sizing: border-box;
       }
 
-      #site-container {
-        height: 81.41vh;
+      #grid-container bo-sites-list {
+        background-color: white;
+        padding: 12%;
+      }
+
+      #grid-container #site-container {
+        height: 76.52%;
         box-shadow: 0px 0px 25px rgb(0, 0, 0, 0.2);
-        width: 100%;
+        width: 94%;
+        margin: 3%;
         position: relative;
+        overflow-y: scroll;
+        justify-self: center;
       }
 
-      #site-container > div {
-        overflow-y: scroll;
+      #grid-container #site-container #scalable-container {
         position: absolute;
         transform-origin: top left;
-        transform: scale(0.76);
-        height: 124%;
+        transform: scale(0.793);
       }
     </style>
 
@@ -70,8 +73,8 @@ export const myBackofficeTemplate = () => {
     <div id="grid-container">
       <bo-sites-list></bo-sites-list>
       <div id="site-container">
-        <div>
-          <my-app></my-app>
+        <div id="scalable-container">
+          <!-- <my-app></my-app> -->
         </div>
       </div>
     </div>
@@ -85,6 +88,13 @@ export const myBackofficeTemplate = () => {
       if (!isChrome) {
         hydrateShadowRoots(document.body);
       }
+
+      
+    </script>
+
+
+    <script>
+      
     </script>
   `;
 };

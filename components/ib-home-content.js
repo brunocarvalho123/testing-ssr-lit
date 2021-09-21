@@ -397,8 +397,8 @@ export class IBHomeContent extends LitElement {
         <div class="section-container">
           <p>Comece a usar em 5 mins</p>
           <div style="display:flex;">
-            <div style="width:100px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
-            <div style="width:100px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:400px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
+            <div style="width:400px; height:400px; background-color: lightpink; margin: 0 20px;"></div>
           </div>
         </div>
       </section>
