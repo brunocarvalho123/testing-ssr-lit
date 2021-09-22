@@ -42,19 +42,21 @@ export class BOActionsList extends LitElement {
   }
 
   toggleWidth (event) {
-    // check if its not hidden
-    const scalableContainer = this.parentElement.children[1].children[1];
+    const gridContainer = this.parentElement;
 
     if (this._isExpanded) {
-      this._isExpanded = !this._isExpanded;
-      this.parentElement.style.gridTemplateColumns = '1fr 15fr';
-
-      // scalableContainer.style.transform = 'scale(0.932)';
+      gridContainer.style.gridTemplateColumns = '1fr 15fr';
     } else {
-      this._isExpanded = !this._isExpanded;
-      this.parentElement.style.gridTemplateColumns = '1fr 4fr';
+      gridContainer.style.gridTemplateColumns = '1fr 4fr';
+    }
 
-      // scalableContainer.style.transform = 'scale(0.797)';
+    this._isExpanded = !this._isExpanded;
+
+    // This fixes the scale of the site container (scalableContainer), whenever the available width changes
+    const scalableContainer = gridContainer.querySelector('#scalable-container');
+    if (scalableContainer.childElementCount > 0) {
+      const scaleValue = scalableContainer.parentElement.offsetWidth / scalableContainer.offsetWidth;
+      scalableContainer.style.transform = `scale(${scaleValue})`;
     }
   }
 

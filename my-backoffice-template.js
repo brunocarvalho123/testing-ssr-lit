@@ -88,13 +88,9 @@ export const myBackofficeTemplate = () => {
       if (!isChrome) {
         hydrateShadowRoots(document.body);
       }
-
-      
     </script>
 
-
     <script>
-      
     </script>
   `;
 };

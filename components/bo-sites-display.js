@@ -21,8 +21,22 @@ export class BOSitesDisplay extends LitElement {
 
       #sites-container > div {
         height: 200px;
-        background-color: lightblue;
         cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #sites-container > div:not(#sites-container > div.new-site) {
+        background-color: lightblue;
+      }
+
+      #sites-container > div.new-site {
+        background-color: none;
+        border: dashed 2px rgb(140, 140, 140);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.8;
       }
 
       button {
@@ -38,7 +52,7 @@ export class BOSitesDisplay extends LitElement {
         cursor: pointer;
       }
 
-      p {
+      h1 {
         margin: 0 0 2rem 0;
         font-size: 1.2rem;
         font-weight: 600;
@@ -62,16 +76,20 @@ export class BOSitesDisplay extends LitElement {
       this.style.display = 'none';
 
       const site = document.createElement('my-app');
-      const container = this.parentElement.querySelector('#scalable-container');
-      container.appendChild(site);
+      const rightContainer = this.parentElement;
+      const scalableContainer = rightContainer.querySelector('#scalable-container');
+      scalableContainer.appendChild(site);
     }
   }
 
   render () {
     return html`
-      <p>Selecione o site que deseja editar</p>
+      <h1>Selecione o site que deseja editar</h1>
       <div id="sites-container">
-        <button>+</button>
+        <div class="new-site">
+          <button>+</button>
+          <p>Criar novo site</p>
+        </div>
         ${this.sites.map((site) => {        
           return html`<div id="${site.id}" @click="${this.displaySite}">${site.name}</div>`}
         )}
