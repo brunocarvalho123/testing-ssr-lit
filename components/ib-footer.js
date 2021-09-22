@@ -33,7 +33,7 @@ export class IBFooter extends LitElement {
 
   render () {
     return html`
-      <img src="../images/buildings.png" width="100%">
+      <img src="./public/images/buildings.png" width="100%">
       <div>
         <ul>
           <li>Termos & condições</li>

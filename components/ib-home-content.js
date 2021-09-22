@@ -409,7 +409,7 @@ export class IBHomeContent extends LitElement {
           <h2>A Susana já usa o Placeholder</h2>
           <p class="biggest-text">Faça como a Susana e encontre soluções para os problemas do seu dia-a-dia</p>
           <div id="susana-info">
-            <img src="./images/susana.png" style="height: 67vh;">
+            <img src="./public/images/susana.png" style="height: 67vh;">
             <ib-card text=${this.susanaCardText} link="Veja como ajudamos na sua tesouraria" theme="susana"></ib-card>
           </div>
           <div id="susana-arrows">
@@ -425,13 +425,13 @@ export class IBHomeContent extends LitElement {
           <p class="biggest-text">Ao trabalhar juntamente com o seu Contabilista através da Placeholder, ambos ganham muito mais tempo!</p>
           <div style="display: flex;">
             <ib-card text=${this.inviteAccountantCardText1} link="Saiba como" theme="invite-accountant">
-              <img src="./images/ia-1.png" slot="media" width="180">
+              <img src="./public/images/ia-1.png" slot="media" width="180">
             </ib-card>
             <ib-card text=${this.inviteAccountantCardText2} link="Saiba como" theme="invite-accountant">
-              <img src="./images/ia-2.png" slot="media" width="180">
+              <img src="./public/images/ia-2.png" slot="media" width="180">
             </ib-card>
             <ib-card text=${this.inviteAccountantCardText3} link="Encontre um Contabilista" theme="invite-accountant">
-              <img src="./images/ia-3.png" slot="media" width="180">
+              <img src="./public/images/ia-3.png" slot="media" width="180">
             </ib-card>
           </div>
           <p class="biggest-text">Conheça todas as vantagens que a Placeholder traz para os Contabilistas</p>
@@ -444,13 +444,13 @@ export class IBHomeContent extends LitElement {
           <h2>Fique a par de todas as novidades importantes para o seu Negócio</h2>
           <div style="display: flex; align-self: flex-start; width: 112%; justify-content: space-between; margin-bottom: 100px;">
             <ib-card text=${this.newsCardText1} link="Ler mais" theme="susana">
-              <img src="./images/news-1.png" height="215" slot="media">
+              <img src="./public/images/news-1.png" height="215" slot="media">
             </ib-card>
             <ib-card text=${this.newsCardText2} link="Ver vídeo" theme="susana">
-              <img src="./images/news-2.png" height="300" slot="media">
+              <img src="./public/images/news-2.png" height="300" slot="media">
             </ib-card>
             <ib-card text=${this.newsCardText3} theme="susana">
-              <img src="./images/news-3.png" height="215" slot="media">
+              <img src="./public/images/news-3.png" height="215" slot="media">
             </ib-card>
           </div>
           <p class="biggest-text">Não perca nenhuma atualização</p>

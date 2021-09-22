@@ -47,14 +47,14 @@ export const myBackofficeTemplate = () => {
 
       #grid-container bo-actions-list {
         background-color: white;
-        padding: 12%;
+        padding: 2rem;
       }
 
       #grid-container #right-container {
         height: 76.52%;
         box-shadow: 0px 0px 25px rgb(0, 0, 0, 0.2);
-        width: 94%;
-        margin: 3%;
+        width: calc(100% - 4rem);
+        margin: 2rem;
         position: relative;
         overflow-y: scroll;
         justify-self: center;
@@ -64,7 +64,7 @@ export const myBackofficeTemplate = () => {
       #grid-container #right-container #scalable-container {
         position: absolute;
         transform-origin: top left;
-        transform: scale(0.793);
+        transform: scale(0.797);
       }
     </style>
 
@@ -75,9 +75,7 @@ export const myBackofficeTemplate = () => {
       <bo-actions-list></bo-actions-list>
       <div id="right-container">
         <bo-sites-display></bo-sites-display>
-        <div id="scalable-container">
-          <!-- <my-app></my-app> -->
-        </div>
+        <div id="scalable-container"></div>
       </div>
     </div>
 
