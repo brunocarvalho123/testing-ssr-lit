@@ -1,6 +1,14 @@
 import {html, css, LitElement} from 'lit';
 
 export class BOActionsList extends LitElement {
+  static get properties () {
+    return {
+      expanded: {
+        type: Boolean
+      }
+    };
+  }
+
   static get styles () {
     return css`
       :host {
@@ -37,15 +45,13 @@ export class BOActionsList extends LitElement {
       { name: 'Ação 2', id: 'A2' }, 
       { name: 'Ação 3', id: 'A3'}
     ];
-
-    this._isExpanded = true;
   }
 
   toggleWidth (event) {
     const gridContainer = this.parentElement;
     const mainContent = gridContainer.querySelector('#main-content');
 
-    if (this._isExpanded) {
+    if (this.expanded) {
       gridContainer.style.gridTemplateColumns = '1fr 15fr';
       mainContent.style.height = '89.89%';
     } else {
@@ -60,7 +66,7 @@ export class BOActionsList extends LitElement {
       siteWrapper.style.transform = `scale(${scaleValue})`;
     }
 
-    this._isExpanded = !this._isExpanded;
+    this.expanded = !this.expanded;
   }
 
   render () {

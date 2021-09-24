@@ -43,19 +43,6 @@ export class BOSitesDisplay extends LitElement {
         align-items: center;
         opacity: 0.8;
       }
-
-      button {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background-color: rgb(140, 140, 140);
-        border: none;
-        color: white;
-        align-self: center;
-        justify-self: center;
-        font-size: 50px;
-        cursor: pointer;
-      }
     `;
   }
 
@@ -78,6 +65,12 @@ export class BOSitesDisplay extends LitElement {
       const mainContent = this.parentElement;
       const siteWrapper = mainContent.querySelector('#site-wrapper');
       siteWrapper.appendChild(site);
+
+      // Fix this
+      const actionsList = mainContent.previousElementSibling;
+      if (!actionsList.expanded) {
+        siteWrapper.style.transform = 'scale(0.931868)';
+      }
     }
   }
 
@@ -86,7 +79,7 @@ export class BOSitesDisplay extends LitElement {
       <h1>Selecione o site que deseja editar</h1>
       <div id="sites-container">
         <div id="create-new-site">
-          <button>+</button>
+          <img src="./public/icons/plus-circle.svg" height="50">
           <p>Criar novo site</p>
         </div>
         ${this.sites.map((site) => {        

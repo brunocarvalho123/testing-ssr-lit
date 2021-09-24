@@ -71,7 +71,7 @@ export const backOfficeTemplate = () => {
     <script src="./node_modules/quill/dist/quill.js"></script>
 
     <div id="grid-container">
-      <bo-actions-list></bo-actions-list>
+      <bo-actions-list expanded></bo-actions-list>
       <div id="main-content">
         <bo-sites-display></bo-sites-display>
         <div id="site-wrapper"></div>
