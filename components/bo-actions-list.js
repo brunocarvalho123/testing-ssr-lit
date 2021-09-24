@@ -43,21 +43,24 @@ export class BOActionsList extends LitElement {
 
   toggleWidth (event) {
     const gridContainer = this.parentElement;
+    const mainContent = gridContainer.querySelector('#main-content');
 
     if (this._isExpanded) {
       gridContainer.style.gridTemplateColumns = '1fr 15fr';
+      mainContent.style.height = '89.89%';
     } else {
       gridContainer.style.gridTemplateColumns = '1fr 4fr';
+      mainContent.style.height = '76.52%';
+    }
+
+    // This fixes the scale of the site wrapper, whenever the available width of its parent changes
+    const siteWrapper = mainContent.querySelector('#site-wrapper');
+    if (siteWrapper.childElementCount > 0) {
+      const scaleValue = mainContent.offsetWidth / siteWrapper.offsetWidth;
+      siteWrapper.style.transform = `scale(${scaleValue})`;
     }
 
     this._isExpanded = !this._isExpanded;
-
-    // This fixes the scale of the site container (scalableContainer), whenever the available width changes
-    const scalableContainer = gridContainer.querySelector('#scalable-container');
-    if (scalableContainer.childElementCount > 0) {
-      const scaleValue = scalableContainer.parentElement.offsetWidth / scalableContainer.offsetWidth;
-      scalableContainer.style.transform = `scale(${scaleValue})`;
-    }
   }
 
   render () {

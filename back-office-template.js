@@ -1,6 +1,6 @@
 import {html} from 'lit';
 
-export const myBackofficeTemplate = () => {
+export const backOfficeTemplate = () => {
   return html`
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
@@ -35,7 +35,6 @@ export const myBackofficeTemplate = () => {
       body {
         margin: 0;
         font-family: 'Montserrat', sans-serif;
-        box-sizing: border-box;
       }
 
       #grid-container {
@@ -50,7 +49,7 @@ export const myBackofficeTemplate = () => {
         padding: 2rem;
       }
 
-      #grid-container #right-container {
+      #grid-container #main-content {
         height: 76.52%;
         box-shadow: 0px 0px 25px rgb(0, 0, 0, 0.2);
         width: calc(100% - 4rem);
@@ -61,7 +60,7 @@ export const myBackofficeTemplate = () => {
         display: flex;
       }
 
-      #grid-container #right-container #scalable-container {
+      #grid-container #main-content #site-wrapper {
         position: absolute;
         transform-origin: top left;
         transform: scale(0.797);
@@ -73,9 +72,9 @@ export const myBackofficeTemplate = () => {
 
     <div id="grid-container">
       <bo-actions-list></bo-actions-list>
-      <div id="right-container">
+      <div id="main-content">
         <bo-sites-display></bo-sites-display>
-        <div id="scalable-container"></div>
+        <div id="site-wrapper"></div>
       </div>
     </div>
 

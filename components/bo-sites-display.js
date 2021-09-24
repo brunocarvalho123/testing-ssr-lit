@@ -12,6 +12,12 @@ export class BOSitesDisplay extends LitElement {
         width: 100%;
       }
 
+      h1 {
+        margin: 0 0 2rem 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
       #sites-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -25,12 +31,11 @@ export class BOSitesDisplay extends LitElement {
         border-radius: 5px;
       }
 
-      #sites-container > div:not(#sites-container > div.new-site) {
+      #sites-container > div:not(#create-new-site) {
         background-color: lightblue;
       }
 
-      #sites-container > div.new-site {
-        background-color: none;
+      #sites-container > #create-new-site {
         border: dashed 2px rgb(140, 140, 140);
         display: flex;
         flex-direction: column;
@@ -51,12 +56,6 @@ export class BOSitesDisplay extends LitElement {
         font-size: 50px;
         cursor: pointer;
       }
-
-      h1 {
-        margin: 0 0 2rem 0;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
     `;
   }
 
@@ -64,7 +63,7 @@ export class BOSitesDisplay extends LitElement {
     super();
 
     this.sites = [
-      { name:'Site IB', id: 'MyApp' }, 
+      { name:'Site IB', id: 'my-app' }, 
       { name: 'Site 2', id: 'S2' }, 
       { name: 'Site 3', id: 'S3'},
       { name: 'Site 4', id: 'S4'}
@@ -72,13 +71,13 @@ export class BOSitesDisplay extends LitElement {
   }
 
   displaySite (event) {
-    if (event && event.currentTarget && event.currentTarget.id === 'MyApp') {
+    if (event && event.currentTarget && event.currentTarget.id) {
       this.style.display = 'none';
 
-      const site = document.createElement('my-app');
-      const rightContainer = this.parentElement;
-      const scalableContainer = rightContainer.querySelector('#scalable-container');
-      scalableContainer.appendChild(site);
+      const site = document.createElement(event.currentTarget.id);
+      const mainContent = this.parentElement;
+      const siteWrapper = mainContent.querySelector('#site-wrapper');
+      siteWrapper.appendChild(site);
     }
   }
 
@@ -86,7 +85,7 @@ export class BOSitesDisplay extends LitElement {
     return html`
       <h1>Selecione o site que deseja editar</h1>
       <div id="sites-container">
-        <div class="new-site">
+        <div id="create-new-site">
           <button>+</button>
           <p>Criar novo site</p>
         </div>
